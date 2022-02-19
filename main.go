@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/xsatoshi-nakamoto/pm/db/database"
+	database "github.com/xsatoshi-nakamoto/pm/db"
 )
 
 func main() {
