@@ -1,9 +1,9 @@
 package main
 
 import (
-	database "github.com/xsatoshi-nakamoto/pm/db"
+	"github.com/xsatoshi-nakamoto/pm/db"
 )
 
 func main() {
-	database.InitDB()
+	db.InitDB()
 }

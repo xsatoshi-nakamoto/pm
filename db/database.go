@@ -1,4 +1,4 @@
-package database
+package db
 
 import (
 	"fmt"
@@ -8,12 +8,20 @@ import (
 )
 
 // the imports go here
-var db *gorm.DB
+var dbInstance *gorm.DB
 
-func InitDB() {
+type Database struct {
+	*gorm.DB
+}
+
+var DB *gorm.DB
+
+func InitDB() *gorm.DB {
 	dsn := "host=localhost user=admin password=HTrang@091297 dbname=firmsone_pm port=5432 sslmode=disable"
+
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
-	if err {
-		fmt.Println("Cant connect db")
-	}
+
+	fmt.Println(err)
+	DB = db
+	return DB
 }
